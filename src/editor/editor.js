@@ -16,6 +16,27 @@ class EditorComponent extends React.Component {
 		}
 	}
 
+	//only called for first element clicked
+	componentDidMount = () => {
+		this.setState({
+			text: this.props.selectedNote.body,
+			title: this.props.selectedNote.title,
+			id: this.props.selectedNote.id
+		});
+	}
+
+	//when new object is selected
+	componentDidUpdate = () => {
+		//diff id selected from one displaying
+		if (this.props.selectedNote.id != this.state.id) {
+			this.setState({
+				text: this.props.selectedNote.body,
+				title: this.props.selectedNote.title,
+				id: this.props.selectedNote.id
+			});
+		}
+	}
+
 	render() {
 		const { classes } = this.props;
 		return(
@@ -34,8 +55,10 @@ class EditorComponent extends React.Component {
 	};
 
 	update = debounce(() => {
-		console.log("UPDATING DATABASE")
-		//wip
+		this.props.updateNote(this.state.id, {
+			title: this.state.title,
+			body: this.state.text
+		})
 	}, 1500);
 }
 

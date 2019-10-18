@@ -9,9 +9,9 @@ const firebase = require('firebase');
 require('firebase/firestore');
 
 firebase.initializeApp({
-    //input your creds here
+//creds here
   });
 
-ReactDOM.render(<App />, document.getElementById('root'));
+ReactDOM.render(<App />, document.getElementById('notes-app'));
 
 serviceWorker.unregister();

@@ -9,11 +9,40 @@ import SidebarItemComponent from '../sidebaritem/sidebaritem';
 class SidebarComponent extends React.Component {
 	constructor() {
 		super();
+		this.state = {
+			addingNote : false,
+			title: null
+		}
 	}
 
 	render() {
-		return(<div>Hello from the sidebar!</div>);
-	}
+
+		const { notes, classes, selectedNoteIndex } = this.props;
+
+
+
+
+
+		return(
+			<div className={classes.sidebarContainer}>
+			<Button 
+				onClick={this.newNoteBtnClick} 
+				className={classes.newNoteBtn}>
+			New Note
+			</Button>
+			{
+				this.state.addingNote ? 
+				<div>Note has been added! :)</div> : null
+			}
+			</div>);
+		}
+
+
+		newNoteBtnClick = () => {
+			console.log("NEW BTN CLICKED");
+		}
+
+
 }
 
 export default withStyles(styles)(SidebarComponent);

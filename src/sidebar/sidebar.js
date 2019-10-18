@@ -74,20 +74,21 @@ class SidebarComponent extends React.Component {
 		}
 
 		updateTitle = (txt) => {
-			this.setState({ title: txt })
-			console.log("HERE IT IS: ", txt)
+			this.setState({ title: txt });
+			console.log("HERE IT IS: ", txt);
 		}
 
 		newNote = () => {
-			console.log(this.state);
+			this.props.newNote(this.state.title);
+			this.setState({ title: null, addingNote: false });
 		}
 
 		selectNote = (note, index) => {
 			this.props.selectNote(note, index);
 		}
 
-		deleteNote = () => {
-			console.log("delete note");
+		deleteNote = (note) => {
+			this.props.deleteNote(note);
 		}
  
 

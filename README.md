@@ -1,14 +1,19 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+![screenshot](https://i.imgur.com/5StIo0s.png)
 
-## Available Scripts
 
-In the project directory, you can run:
 
-### `npm start`
+Description: A react web application that allows you to create new notes, edit/delete existing notes, and stores your notes in a firebase firestore database.
 
-Runs the app in the development mode.<br />
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+Instructions:
 
-The page will reload if you make edits.<br />
-You will also see any lint errors in the console.
+1. You must have nodejs installed (sudo apt-get install -y nodejs)
+2. You must have build-essential package installed (sudo apt-get install -y build-essential)
+3. You must have react installed (sudo npm install -g create-react-app)
+4. Create your react application (create-react-app notes-app)
+5. Go into your newly created directory (cd /notes-app)
+6. Set up your firebase firestore database and enter the credentials into the project.
+7. Start application (npm start)
+
+
+Tools Used: Javascript, React, Firebase Firestore, Material UI (buttons and icons), React Quill (for text editor) 
 
